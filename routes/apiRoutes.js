@@ -2,6 +2,7 @@
 //notesData holds an array that will hold the information
 const notesData = require("../db/db.json");
 const fs = require("fs");
+//uuid will generate a very random id for each object when a note is created
 const { v4: uuidv4 } = require('uuid');
 
 
@@ -29,7 +30,8 @@ module.exports = function (app){
                 return console.log(err);
             }
             console.log("Success generating the output file!");
-        });       
+        });  
+        
     })
 
     //this will use the id for the object and find it in the array and get rid of that instance
@@ -53,5 +55,6 @@ module.exports = function (app){
         });       
         res.json();
     });
+    
 }
 
